@@ -556,6 +556,25 @@ Linux sandboxes for AI agents, each a Firecracker microVM with its own kernel, c
 
 ---
 
+### [Lizard Sandboxes](https://lizard.build/sandboxes)
+[Website](https://lizard.build/sandboxes) | [Docs](https://lizard.build/docs/sandboxes/) | [GitHub](https://github.com/lizard-build/lizard-sdk)
+
+Managed Linux sandboxes from Lizard (lizard.build) for AI agent tasks, with Firecracker microVMs, snapshots, forks, and TypeScript/Python SDKs.
+
+- **Isolation:** Firecracker microVMs with their own kernels; pod-backed volumes and restored pod snapshots use shared-kernel runc ([runtime docs](https://lizard.build/docs/sandboxes/#runtime-and-templates))
+- **Key features:** Shell execution, file access, stateful Python code interpreter, private preview URLs, pause/resume, desktop computer use, Persistent Volumes
+- **Cold start:** Not specified separately from the documented create-to-first-output benchmark
+- **Max session:** No expiration when created with `timeoutMs: 0`; SDK and CLI default to five minutes ([timeouts](https://lizard.build/docs/sandboxes/#resources-and-timeouts))
+- **Snapshots / Forking:** Yes (snapshot + fork); fork is unavailable with an attached volume or on the pod runtime
+- **Stateful:** Yes (with volumes)
+- **GPU:** Not specified
+- **BYOC / Self-host:** Not specified
+- **SDKs:** TypeScript/JavaScript (`@lizard-build/sdk`), Python (`lizard-sdk`)
+- **License:** Proprietary service; [Apache-2.0 SDK](https://github.com/lizard-build/lizard-sdk/blob/main/LICENSE)
+- **Pricing:** Pro $19/month includes $19 of usage; seven-day trial includes $5 of usage and requires a card; sandboxes billed per second by size ([pricing](https://lizard.build/pricing))
+
+---
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry template and source policy.
